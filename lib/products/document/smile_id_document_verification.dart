@@ -37,6 +37,7 @@ class SmileIDDocumentVerification extends StatelessWidget {
     bool allowAgentMode = false,
     bool showInstructions = true,
     bool skipApiSubmission = false,
+    SmileSensitivity smileSensitivity = SmileSensitivity.normal,
     bool useStrictMode = false,
     Map<String, String>? extraPartnerParams,
     required Function(String resultJson) onSuccess,
@@ -62,6 +63,7 @@ class SmileIDDocumentVerification extends StatelessWidget {
         "showInstructions": showInstructions,
         "skipApiSubmission": skipApiSubmission,
         "useStrictMode": useStrictMode,
+        "smileSensitivity": smileSensitivity.name,
         "extraPartnerParams": extraPartnerParams,
       },
     );
