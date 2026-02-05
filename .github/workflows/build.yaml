@@ -35,7 +35,7 @@ jobs:
       - uses: actions/setup-java@v5
         with:
           distribution: temurin
-          java-version: 17
+          java-version: 21
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v5
       - uses: subosito/flutter-action@v2
@@ -45,8 +45,13 @@ jobs:
       - name: Install Dependencies
         run: flutter pub get && cd sample && flutter pub get && cd ..
       - name: Lint Android
-        working-directory: ./sample/android
-        run: ./gradlew ktlintCheck
+        uses: musichin/ktlint-check@v4
+        with:
+          ktlint-version: "1.7.0"
+          patterns: |
+            **/**.kt
+            !**/**.g.kt
+            !**/generated/**
       - name: Test
         run: flutter test && cd sample && flutter test && cd ..
       - name: Build Android Sample App
