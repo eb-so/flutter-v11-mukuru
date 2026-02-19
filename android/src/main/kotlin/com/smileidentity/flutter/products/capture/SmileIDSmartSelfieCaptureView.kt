@@ -178,7 +178,8 @@ internal class SmileIDSmartSelfieCaptureView private constructor(
                                 )
                             }
                         }
-                        if (isSandbox && enableSandboxManualButton && showSandboxManualButton && acknowledgedInstructions) {
+                        val instructionsDone = acknowledgedInstructions || !showInstructions
+                        if (isSandbox && enableSandboxManualButton && showSandboxManualButton && instructionsDone) {
                             Button(
                                 onClick = {
                                     sandboxButtonEnabled = false
