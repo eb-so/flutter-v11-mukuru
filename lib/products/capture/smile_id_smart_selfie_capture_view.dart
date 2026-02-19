@@ -25,6 +25,7 @@ class SmileIDSmartSelfieCaptureView extends StatelessWidget {
     bool showAttribution = true,
     bool allowAgentMode = true,
     bool useStrictMode = false,
+    bool enableSandboxManualCapture = false,
     SmileSensitivity smileSensitivity = SmileSensitivity.normal,
     required Function(String resultJson) onSuccess,
     required Function(String errorMessage) onError,
@@ -38,6 +39,7 @@ class SmileIDSmartSelfieCaptureView extends StatelessWidget {
         "showAttribution": showAttribution,
         "allowAgentMode": allowAgentMode,
         "useStrictMode": useStrictMode,
+        "enableSandboxManualCapture": enableSandboxManualCapture,
         "smileSensitivity": smileSensitivity.name,
       },
     );
